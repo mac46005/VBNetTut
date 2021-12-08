@@ -6,3 +6,9 @@
     SwimmingWeather = 72
     BoilingPoint = 212
 End Enum
+
+Enum ServingSizes As Long
+    Small = 1
+    Regular = 2
+    Large = 3
+End Enum
