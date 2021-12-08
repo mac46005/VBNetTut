@@ -2,14 +2,7 @@ Imports System
 
 Module Program
     Sub Main(args As String())
-        Dim value As String
-        Console.WriteLine()
-        value = Console.ReadLine
-
-        Console.WriteLine(value)
-
-        Console.ReadLine()
-
+        Dim myValue As Integer = 32 'assign the literal value 32
     End Sub
 
 
