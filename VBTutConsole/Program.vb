@@ -2,15 +2,13 @@ Option Strict On
 Imports System.Console
 Module Program
     Sub Main(args As String())
-        Dim valueOne As Integer = 10
-        Dim valueTwo As Integer = 20
-        Dim valueThree As Integer = 30
+        Dim temp As Integer = 32
 
-        WriteLine("Testing valueOne against valueTwo...")
-        If valueOne > valueTwo Then
-            WriteLine("value one is larger than value two")
-        Else
-            WriteLine("nope, value one is not larger than value two.")
+        If temp <= 32 Then
+            WriteLine("Warning! Ice on the road!")
+            If temp = 32 Then
+                WriteLine("Temp exactly freezing, beware of water.")
+            End If
         End If
     End Sub
 End Module
