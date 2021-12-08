@@ -8,16 +8,9 @@ Module Program
 
         WriteLine("Testing valueOne against valueTwo...")
         If valueOne > valueTwo Then
-            WriteLine($"{NameOf(valueOne)}: {valueOne} larger than {NameOf(valueTwo)}:{valueTwo}")
+            WriteLine("value one is larger than value two")
+        Else
+            WriteLine("nope, value one is not larger than value two.")
         End If
-
-        WriteLine("Testing valueThree against valueTwo...")
-        If valueThree > valueTwo Then
-            WriteLine($"{NameOf(valueThree)}: {valueThree} larger than {NameOf(valueTwo)}: {valueTwo}")
-        End If
-
-        WriteLine("Testing is valueTwo > 15 on one line")
-        If valueTwo > 15 Then WriteLine("Yes it is")
-
     End Sub
 End Module
