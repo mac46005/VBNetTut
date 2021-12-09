@@ -5,12 +5,8 @@ Module Program
         Dim target As String = "Milo"
 
         Select Case target
-            Case "Alpha" To "Lambda"
-                WriteLine("ALpha to Lambda executed")
-            Case "Lamda" To "Zeta"
-                WriteLine("Lamda to Zeta executed")
-            Case Else
-                WriteLine("Else Executed")
+            Case "Fred", "Joe", Is < "Alpha"
+                WriteLine("Joe or Fres or < Aardzark")
         End Select
     End Sub
 End Module
