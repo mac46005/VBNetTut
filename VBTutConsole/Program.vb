@@ -2,10 +2,13 @@ Option Strict On
 Imports System.Console
 Module Program
     Sub Main(args As String())
-        Dim loopCounter As Single
+        Dim outer As Integer
+        Dim inner As Integer
 
-        For loopCounter = 0.5 To 9 Step 0.5
-            WriteLine($"{NameOf(loopCounter)} : {loopCounter}")
+        For outer = 3 To 6
+            For inner = 10 To 12
+                WriteLine($"{outer} * {inner} = {outer * inner}")
+            Next
         Next
     End Sub
 End Module
