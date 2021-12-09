@@ -4,12 +4,9 @@ Module Program
     Sub Main(args As String())
         Dim counterVariable As Integer = 0
 
-repeat: ' the label
-        WriteLine($"Counter variable: {counterVariable}")
-        ' Increment the counter
-        counterVariable += 1
-        If counterVariable < 10 Then
-            GoTo repeat ' the dastardly deed
-        End If
+        Do Until counterVariable = 10
+            WriteLine($"{NameOf(counterVariable)}:{counterVariable}")
+            counterVariable += 1
+        Loop
     End Sub
 End Module
