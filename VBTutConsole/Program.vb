@@ -2,17 +2,15 @@ Option Strict On
 Imports System.Console
 Module Program
     Sub Main(args As String())
-        Dim targetInteger As Integer = 7
+        Dim target As String = "Milo"
 
-        Select Case targetInteger
-            Case Is < 10
-                WriteLine("Less than 10")
-            Case 10 To 14
-                WriteLine("10-14")
-            Case 15
-                WriteLine("15!")
+        Select Case target
+            Case "Alpha" To "Lambda"
+                WriteLine("ALpha to Lambda executed")
+            Case "Lamda" To "Zeta"
+                WriteLine("Lamda to Zeta executed")
             Case Else
-                WriteLine("Value not found!")
+                WriteLine("Else Executed")
         End Select
     End Sub
 End Module
