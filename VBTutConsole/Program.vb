@@ -2,8 +2,9 @@ Option Strict On
 Imports System.Console
 Module Program
     Sub Main(args As String())
-        Dim loopCounter As Integer
-        For loopCounter = 0 To 10
+        Dim loopCounter As Single
+
+        For loopCounter = 0.5 To 9
             WriteLine($"{NameOf(loopCounter)} : {loopCounter}")
         Next
     End Sub
