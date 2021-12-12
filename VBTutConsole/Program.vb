@@ -14,8 +14,16 @@ Module Program
             WriteLine($"{firstValue} + {secondValue} = {firstValue + secondValue}")
             WriteLine($"{firstValue} - {secondValue} = {firstValue - secondValue}")
             WriteLine($"{firstValue} * {secondValue} = {firstValue * secondValue}")
-            WriteLine($"{firstValue} \ {secondValue} = {firstValue / secondValue}")
-            WriteLine($"{firstValue} / {secondValue} = {firstValue \ secondValue}")
+            Dim asIntResult As Integer = firstValue \ secondValue
+            Dim asDoubleResult As Double = firstValue / secondValue
+
+
+
+            WriteLine($"{firstValue} \ {secondValue} = [IntegerResult] {asIntResult}")
+            WriteLine($"{firstValue} / {secondValue} = [DoubleResult] {asDoubleResult}")
+
+
+
             ReadLine()
 
         End While
