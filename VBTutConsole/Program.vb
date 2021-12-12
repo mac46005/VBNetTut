@@ -3,29 +3,17 @@ Option Strict Off
 Imports System.Console
 Module Program
     Sub Main(args As String())
-        Dim firstValue As Integer
-        Dim secondValue As Integer
-        While True
-            WriteLine("Enter first value:")
-            firstValue = CInt(ReadLine())
-            WriteLine("Enter second value:")
-            secondValue = CInt(ReadLine())
+        Dim counter As Integer
 
-            WriteLine($"{firstValue} + {secondValue} = {firstValue + secondValue}")
-            WriteLine($"{firstValue} - {secondValue} = {firstValue - secondValue}")
-            WriteLine($"{firstValue} * {secondValue} = {firstValue * secondValue}")
-            Dim asIntResult As Integer = firstValue \ secondValue
-            Dim asDoubleResult As Double = firstValue / secondValue
+        'count from 1 to 100
+        For counter = 1 To 100
+            ' display the value
+            Write($"{counter} ")
 
-
-
-            WriteLine($"{firstValue} \ {secondValue} = [IntegerResult] {asIntResult}")
-            WriteLine($"{firstValue} / {secondValue} = [DoubleResult] {asDoubleResult}")
-
-
-
-            ReadLine()
-
-        End While
+            ' every tenth value, display a tab and the value
+            If counter Mod 10 = 0 Then
+                WriteLine(vbTab & counter)
+            End If
+        Next counter
     End Sub
 End Module
