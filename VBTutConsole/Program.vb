@@ -1,14 +1,23 @@
-Option Strict On
+Option Strict Off
+
 Imports System.Console
 Module Program
     Sub Main(args As String())
-        Dim outer As Integer
-        Dim inner As Integer
+        Dim firstValue As Integer
+        Dim secondValue As Integer
+        While True
+            WriteLine("Enter first value:")
+            firstValue = CInt(ReadLine())
+            WriteLine("Enter second value:")
+            secondValue = CInt(ReadLine())
 
-        For outer = 3 To 6
-            For inner = 10 To 12
-                WriteLine($"{outer} * {inner} = {outer * inner}")
-            Next
-        Next
+            WriteLine($"{firstValue} + {secondValue} = {firstValue + secondValue}")
+            WriteLine($"{firstValue} - {secondValue} = {firstValue - secondValue}")
+            WriteLine($"{firstValue} * {secondValue} = {firstValue * secondValue}")
+            WriteLine($"{firstValue} \ {secondValue} = {firstValue / secondValue}")
+            WriteLine($"{firstValue} / {secondValue} = {firstValue \ secondValue}")
+            ReadLine()
+
+        End While
     End Sub
 End Module
