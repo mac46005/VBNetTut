@@ -1,22 +1,32 @@
 Option Strict Off
+Imports System.Console
 Module Program
     Sub Main(args As String())
-        Dim x As Integer = 5
-        Dim y As Integer = 7
+        Dim minDrinkingCoffee As Integer = 5
+        Dim minReadingNewspaper As Integer = 10
+        Dim minArguing As Integer = 15
+        Dim minDawdling As Integer = 20
 
-        Dim andValue As Boolean
-        Dim orValue As Boolean
-        Dim xorValue As Boolean
-        Dim notValue As Boolean
+        Dim numAdults As Integer = 2
+        Dim numChildren As Integer = 2
 
-        andValue = x = 3 And y = 7
-        orValue = x = 3 Or y = 7
-        xorValue = x = 3 Xor y = 7
-        notValue = Not x = 3
+        Dim wastebByEachAdult As Integer
+        Dim wastedByAllAdults As Integer
+        Dim wastedByEachKid As Integer
+        Dim wastedByAllKids As Integer
+        Dim wastedByFamily As Integer
+        Dim totalSeconds As Integer
 
-        WriteLine($"x = 3 And y = 7. {andValue}")
-        WriteLine($"x = 3 Or y = 7. {orValue}")
-        WriteLine($"x = 3 xor y = 7. {xorValue}")
-        WriteLine($"x = 3 Not y = 7. {notValue}")
+        wastebByEachAdult = minDrinkingCoffee + minReadingNewspaper
+        wastedByAllAdults = wastebByEachAdult * numAdults
+        wastedByEachKid = wastedByEachKid * numChildren
+        wastedByFamily = wastedByAllAdults + wastedByAllKids
+        totalSeconds = wastedByFamily * 60
+
+        WriteLine($"Each adult wastes {wastebByEachAdult} minutes")
+        WriteLine($"Each child wasted by entire family: {wastedByAllKids}")
+        WriteLine($"Total wasted seconds: {totalSeconds}")
+
+
     End Sub
 End Module
