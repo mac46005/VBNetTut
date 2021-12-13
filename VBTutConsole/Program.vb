@@ -7,43 +7,24 @@ Module Program
     End Class
     Public Class Tester
         Public Shared Sub Main()
-            Dim testobject As New Tester()
-            testobject.Run()
-
+            Dim secondParam As Integer = 222
+            Dim timeObjest As New Time()
+            timeObjest.DisplayCurrentTime("firstParam", secondParam)
         End Sub
-        Public Sub Run()
-            'created an integer
-            Dim firstInt As Integer = 5
+    End Class
+    Public Class Time
+        ' Private variables
+        Private Year As Integer
+        Private Month As Integer
+        Private Day As Integer
+        Private Hour As Integer
+        Private Minute As Integer
+        Private Second As Integer
 
-            ' create a second integer
-            Dim secondInt As Integer = firstInt
-
-            ' display the two integers
-            Console.WriteLine($"firstInt: {firstInt}, secondInt: {secondInt}")
-
-            ' modify the second integer 
-            secondInt = 7
-
-            ' display the two integers
-            Console.WriteLine($"firstInt: {firstInt}, secondInt: {secondInt}")
-
-            ' create dog
-            Dim bitch As New Bitch()
-
-            ' assign a value to weight
-            bitch.Weight = 3
-
-            ' create a second reerence to the bitch
-            Dim bitchTwo As Bitch = bitch
-
-            ' display thier values
-            Console.WriteLine($"bitch: {bitch.Weight}, bitchTwo: {bitchTwo.Weight}")
-            bitchTwo.Weight = 7
-
-            ' display the two values
-            Console.WriteLine($"bitch: {bitch.Weight}, bitchTwo: {bitchTwo.Weight}")
-
-
+        ' public methods
+        Public Sub DisplayCurrentTime(firstParam As String, secondParam As Integer)
+            WriteLine("stub for DisplayCurrentTime")
         End Sub
+
     End Class
 End Module
