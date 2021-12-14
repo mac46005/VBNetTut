@@ -22,7 +22,7 @@ Module Program
 
         End Sub
 
-        Public Sub Doubler(ByVal param As Integer)
+        Public Sub Doubler(ByRef param As Integer)
             ' display the value that was passed in
             Console.WriteLine($"In Double(). Revecieved param: {param}")
 
