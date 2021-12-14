@@ -1,17 +1,17 @@
 ﻿Public Class Window
-    ' these members are private and thus invisible
-    ' to derived class methods;
-    Private _top As Integer
-    Private _left As Integer
+    ' these members are protected and thus visible
+    ' to derived class methods.
+    Protected _top As Integer
+    Protected _left As Integer
 
-    ' constructor takes two integers
-    Public Sub New(top As Integer, bottom As Integer)
+    'constructor
+    Public Sub New(top As Integer, left As Integer)
         _top = top
-        _left = bottom
-    End Sub 'new
+        _left = left
+    End Sub
 
     ' simulates drawing the window
-    Public Sub DrawWindow()
-        Console.WriteLine($"Drawing window at top:{_top}    bottom:{_left}")
+    Public Overridable Sub DrawingWindow()
+        Console.WriteLine($"Window: drawing window at ({_left},{_top})")
     End Sub
 End Class
