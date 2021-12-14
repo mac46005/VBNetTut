@@ -7,10 +7,14 @@ Module Program
     End Class
     Public Class Tester
         Public Shared Sub Main()
-            Dim FakeTime As New Time(1223, 3, 21, 3, 4, 44)
-            FakeTime.DisplayCurrentTime()
-
-
+            Cat.HowManyCats()
+            Dim frisky As New Cat("Firsky", 5)
+            frisky.GetWeight()
+            Cat.HowManyCats()
+            Dim whiskers As New Cat("Whiskers", 7)
+            whiskers.GetWeight()
+            whiskers.HowManyCats()
+            Cat.HowManyCats()
         End Sub
     End Class
     Public Class Time
