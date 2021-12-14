@@ -1,19 +1,21 @@
 ﻿Public Class Cat
-    Private Shared instances As Integer = 0
-    Private weight As Integer
-    Private name As String
+    Private _weight As Integer
 
-    ' Constructors
-    Public Sub New(ByVal name As String, ByVal weight As Integer)
-        instances += 1
-        Me.name = name
-        Me.weight = weight
+    Public Sub New(ByVal weight As Integer)
+        _weight = weight
     End Sub
-    ' METHODS
-    Public Shared Sub HowManyCats()
-        Console.WriteLine($"{instances} cats adopted")
-    End Sub
-    Public Sub GetWeight()
-        Console.WriteLine($"{name} weight: {weight}")
-    End Sub
+
+    Public Property Weight() As Integer
+        Get
+            Return _weight
+        End Get
+        Set(value As Integer)
+            _weight = value
+        End Set
+    End Property
+
+
+    Public Overrides Function ToString() As String
+        Return _weight.ToString()
+    End Function
 End Class
