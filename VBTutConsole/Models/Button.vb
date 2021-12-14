@@ -1,13 +1,11 @@
 ﻿Public Class Button
-    Inherits Window
+    Inherits WindowBase
 
+    ' constructor
     Public Sub New(top As Integer, left As Integer)
         MyBase.New(top, left)
     End Sub
-
-    ' an ovverridden version (note keyword) because in the
-    ' derived method we change the behavior
-    Public Overrides Sub DrawingWindow()
-        Console.WriteLine($"Drawing a button at ({_left},{_top})      {ControlChars.Lf}")
+    Public Overrides Sub DrawWindow()
+        Console.WriteLine($"Drawing a button at ({_left},{_top})")
     End Sub
 End Class

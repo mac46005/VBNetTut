@@ -1,17 +1,15 @@
-﻿Public Class ListBox : Inherits Window
-    ' private members
-    Private _listboxContents As String
-
-    ' constructor
+﻿Public Class ListBox : Inherits WindowBase
+    ' constructor adds a parameter
     Public Sub New(top As Integer, left As Integer, content As String)
         MyBase.New(top, left)
-        _listboxContents = content
+        _listBoxContents = content
     End Sub
 
-    ' an overridden version (not keyword) because in the
-    ' derived method we changed the behavior
-    Public Overrides Sub DrawingWindow()
-        MyBase.DrawingWindow() ' invoke base method
-        Console.WriteLine($"Writing string to the listBox: {_listboxContents}")
+    ' an overridden version implementing the 
+    ' abstract method
+    Public Overrides Sub DrawWindow()
+        Console.WriteLine($"Writing string to the listbox: {_listBoxContents}")
     End Sub
+
+    Private _listBoxContents As String
 End Class

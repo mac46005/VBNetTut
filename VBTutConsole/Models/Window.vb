@@ -1,17 +1,11 @@
 ﻿Public Class Window
-    ' these members are protected and thus visible
-    ' to derived class methods.
-    Protected _top As Integer
-    Protected _left As Integer
-
+    Inherits WindowBase
     'constructor
     Public Sub New(top As Integer, left As Integer)
-        _top = top
-        _left = left
+        MyBase.New(top, left)
     End Sub
 
-    ' simulates drawing the window
-    Public Overridable Sub DrawingWindow()
-        Console.WriteLine($"Window: drawing window at ({_left},{_top})")
+    Public Overrides Sub DrawWindow()
+        Console.WriteLine("WIndow Drawn")
     End Sub
 End Class
