@@ -3,9 +3,13 @@ Imports System.Console
 Module Program
     Public Class Tester
         Public Shared Sub Main()
-            Dim test As New Tester()
+            ' create a base instance
+            Dim w As New Window(3, 4)
+            w.DrawWindow()
 
-            test.Run()
+            ' create a derived instance
+            Dim lb As New ListBox(4, 5, "Hello world!")
+            lb.DrawWindow()
         End Sub
 
         Public Sub Run()
