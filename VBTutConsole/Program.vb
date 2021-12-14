@@ -7,9 +7,10 @@ Module Program
     End Class
     Public Class Tester
         Public Shared Sub Main()
-            Dim secondParam As Integer = 222
-            Dim timeObjest As New Time()
-            timeObjest.DisplayCurrentTime("firstParam", secondParam)
+            Dim FakeTime As New Time(1223, 3, 21, 3, 4, 44)
+            FakeTime.DisplayCurrentTime()
+
+
         End Sub
     End Class
     Public Class Time
@@ -22,9 +23,37 @@ Module Program
         Private Second As Integer
 
         ' public methods
-        Public Sub DisplayCurrentTime(firstParam As String, secondParam As Integer)
-            WriteLine("stub for DisplayCurrentTime")
+        Public Sub DisplayCurrentTime()
+            WriteLine($"{Month}/{Day}/{Year}    {Hour}:{Minute}:{Second}")
+        End Sub
+        ' Constructor
+        Public Sub New(ByVal theYear As Integer, ByVal theMonth As Integer, ByVal theDay As Integer, ByVal theHour As Integer, ByVal theMinute As Integer, ByVal theSecond As Integer)
+            Year = theYear
+            Month = theMonth
+            Day = theDay
+            Hour = theHour
+            Minute = theMinute
+            Second = theSecond
         End Sub
 
+        ' Must provide own way of copying data to own objects
+        Public Sub New(ByVal existingObject As Time)
+            Year = existingObject.Year
+            Month = existingObject.Month
+            Day = existingObject.Day
+            Hour = existingObject.Hour
+            Minute = existingObject.Minute
+            Second = existingObject.Second
+        End Sub
+
+        Public Sub TakeDate(ByVal Hour As Integer)
+            Me.Hour = Hour
+        End Sub
+    End Class
+    Public Class TestClass
+        Sub SomeMethod(ByVal firstParam As Integer, ByVal secondParam As Single)
+            WriteLine($"Here are the parameters recieved: {firstParam},{secondParam}")
+
+        End Sub
     End Class
 End Module
