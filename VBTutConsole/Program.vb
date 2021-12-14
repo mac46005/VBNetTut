@@ -3,13 +3,22 @@ Imports System.Console
 Module Program
     Public Class Tester
         Public Shared Sub Main()
-            ' create a base instance
-            Dim w As New Window(3, 4)
-            w.DrawWindow()
+            Dim win As New Window(3, 4)
+            Dim lb As New ListBox(23, 23, "Hello World!")
+            Dim b As New Button(3, 444)
+            win.DrawingWindow()
+            lb.DrawingWindow()
+            b.DrawingWindow()
 
-            ' create a derived instance
-            Dim lb As New ListBox(4, 5, "Hello world!")
-            lb.DrawWindow()
+            Dim winArray(3) As Window
+            winArray(0) = New Window(22, 333)
+            winArray(1) = New ListBox(23, 442, "Yup")
+            winArray(2) = New Button(55, 66)
+
+            Dim i As Integer = 0
+            For i = 0 To 2
+                winArray(i).DrawingWindow()
+            Next i
         End Sub
 
         Public Sub Run()
