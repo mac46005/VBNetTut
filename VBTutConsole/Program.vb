@@ -9,11 +9,23 @@ Module Program
             Console.WriteLine($"myObjectVariable: {myObjectVariable.ToString()}")
 
             ' unboxing (must be explicit)
-            Dim anotherIntegerVariable As Integer = DirectCast(myObjectVariable, Integer)
+            ' trying it in an if statement
+            If TypeOf (myObjectVariable) Is Integer Then
+                Dim anotherIntegerVariable As Integer =
+                    DirectCast(myObjectVariable, Integer)
+                Console.WriteLine($"anotherIntegerVariable: {anotherIntegerVariable}")
+            End If
 
-            Console.WriteLine($"anotherIntegerVariable: {anotherIntegerVariable}")
-
-
+            ' unboxing in a try catch for most saftey
+            ' unboxing must be explicit
+            Try
+                Dim anotherIntegerVariable As Integer =
+                    DirectCast(myObjectVariable, Integer)
+                Console.WriteLine($"From try catch{ControlChars.Lf}anotherIntegerVarible: {anotherIntegerVariable}")
+            Catch ex As InvalidCastException
+                ' should not hit this but for demo purposes
+                Console.WriteLine(ex.Message)
+            End Try
         End Sub
     End Class
 End Module
