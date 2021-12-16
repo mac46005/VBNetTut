@@ -1,5 +1,5 @@
 ﻿Public Class Document
-    Implements IStorable, ICompressible
+    Implements IStorable, ICompressible2
     Private _status As Integer
     Public Property Status As Integer Implements IStorable.Status
         Get
@@ -28,7 +28,11 @@
         Console.WriteLine("Document.Compress()")
     End Sub
 
-    Public Sub Decompress() Implements ICompressible.Decompress\
+    Public Sub Decompress() Implements ICompressible.Decompress
         Console.WriteLine("Document.Decompress()")
+    End Sub
+
+    Public Sub LogSavedBytes() Implements ICompressible2.LogSavedBytes
+        Console.WriteLine("Document.LogSavedBytes()")
     End Sub
 End Class
