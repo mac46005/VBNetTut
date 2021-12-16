@@ -5,8 +5,8 @@ Imports VBTutConsole.Chp14Arrays
 Module Program
     Public Class Tester
         Public Shared Sub Main()
-            Dim intArray As Integer()
-            Dim empArray As Employee()
+            Dim intArray() As Integer
+            Dim empArray() As Employee
             intArray = New Integer(5) {}
             empArray = New Employee(3) {}
 
@@ -14,18 +14,18 @@ Module Program
             Dim i As Integer
             For i = 0 To empArray.Length - 1
                 empArray(i) = New Employee(i + 5)
+            Next i
+
+            Console.WriteLine("The integer array...")
+            For Each intValue As Integer In intArray
+                Console.WriteLine(intValue.ToString())
             Next
 
-            Console.WriteLine($"The integer array...")
-            For i = 0 To intArray.Length - 1
-                Console.WriteLine($"{intArray(i).ToString()}")
-            Next
+            Console.WriteLine("The employee array...")
 
-            Console.WriteLine(ControlChars.Lf + "The employee array...")
-            For i = 0 To empArray.Length - 1
-                Console.WriteLine(empArray(i).ToString())
+            For Each e As Employee In empArray
+                Console.WriteLine(e)
             Next
-
 
         End Sub
     End Class
