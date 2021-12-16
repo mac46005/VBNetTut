@@ -1,32 +1,30 @@
 Option Strict Off
 Imports System.Console
 Imports VBTutConsole.OverridingInterfaces
-
+Imports VBTutConsole.Chp14Arrays
 Module Program
     Public Class Tester
         Public Shared Sub Main()
-            Dim myIntArrayImplicit(7) As Integer ' implicit contrsuctor, 7 members
-            Dim myIntArrayExplicit As Integer() = New Integer(7) {} ' I think the author made a mistake
-            ' Dim myIntArray as Integer = New Integer(7){} <= this is what he got. I keep getting an error though....
+            Dim intArray As Integer()
+            Dim empArray As Employee()
+            intArray = New Integer(5) {}
+            empArray = New Employee(3) {}
 
+            ' populate the array
+            Dim i As Integer
+            For i = 0 To empArray.Length - 1
+                empArray(i) = New Employee(i + 5)
+            Next
 
-            ' Resizing an array
-            Dim myArrayString As String() = New String(4) {}
+            Console.WriteLine($"The integer array...")
+            For i = 0 To intArray.Length - 1
+                Console.WriteLine($"{intArray(i).ToString()}")
+            Next
 
-            myArrayString(0) = "valueone"
-            myArrayString(1) = "valuetwo"
-            myArrayString(2) = "valuethree"
-            myArrayString(3) = "valuefour"
-
-            ' You can resize an array from its current size using ReDim
-            ReDim myArrayString(50)
-
-            ' You can make the same change to array, but preserve the existing data in the array by writing:
-            ReDim Preserve myArrayString(50)
-
-            ' UBound property of the array which returns the current upper bound of the array.
-            ' THe following line resizes array to 50 elements larger than its current size:
-            ReDim Preserve myArrayString(UBound(myArrayString) + 50)
+            Console.WriteLine(ControlChars.Lf + "The employee array...")
+            For i = 0 To empArray.Length - 1
+                Console.WriteLine(empArray(i).ToString())
+            Next
 
 
         End Sub
