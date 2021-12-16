@@ -23,6 +23,12 @@ Module Program
 
             ' You can make the same change to array, but preserve the existing data in the array by writing:
             ReDim Preserve myArrayString(50)
+
+            ' UBound property of the array which returns the current upper bound of the array.
+            ' THe following line resizes array to 50 elements larger than its current size:
+            ReDim Preserve myArrayString(UBound(myArrayString) + 50)
+
+
         End Sub
     End Class
 End Module
