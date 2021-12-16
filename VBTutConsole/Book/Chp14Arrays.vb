@@ -39,10 +39,32 @@
             Dim explicitArray() As Integer = {33, 4, 5, 6}
             DisplayVals(explicitArray)
         End Sub
-        Public Sub TwoDimensionalArray()
-            ' How to call a rectangular array system
-            Dim rectangularArray1(,) As Integer
-            Dim rectangularArray2 As Integer(,)
+        Public Shared Sub TwoDimensionalArray()
+            Const rowsUB As Integer = 4
+            Const columnUB As Integer = 3
+
+            ' declare a 4x3 Integer array
+            Dim rectangularArray(rowsUB, columnUB)
+
+
+            ' populate the array
+            Dim i As Integer
+            For i = 0 To rowsUB - 1
+                Dim j As Integer
+                For j = 0 To columnUB - 1
+                    rectangularArray(i, j) = i + j
+                Next
+            Next
+
+
+
+            ' repost the contents of the array
+            For i = 0 To rowsUB - 1
+                Dim j As Integer
+                For j = 0 To columnUB - 1
+                    Console.WriteLine($"rectangularArray[{i},{j}] = {rectangularArray(i, j)}")
+                Next
+            Next
         End Sub
     End Class 'ArrayExamples
 End Namespace
