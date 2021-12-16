@@ -5,27 +5,10 @@ Imports VBTutConsole.Chp14Arrays
 Module Program
     Public Class Tester
         Public Shared Sub Main()
-            Dim intArray() As Integer
-            Dim empArray() As Employee
-            intArray = New Integer(5) {}
-            empArray = New Employee(3) {}
+            ' This is an example of the ParamsArray keyword in use
+            ' public Sub DisplayVals(ByVal ParamArray intVals() as Integer)
+            Chp14Arrays.ArrayExamples.DisplayVals(3, 4, 5, 3, 5, 6)
 
-            ' populate the array
-            Dim i As Integer
-            For i = 0 To empArray.Length - 1
-                empArray(i) = New Employee(i + 5)
-            Next i
-
-            Console.WriteLine("The integer array...")
-            For Each intValue As Integer In intArray
-                Console.WriteLine(intValue.ToString())
-            Next
-
-            Console.WriteLine("The employee array...")
-
-            For Each e As Employee In empArray
-                Console.WriteLine(e)
-            Next
 
         End Sub
     End Class

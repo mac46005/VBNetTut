@@ -16,4 +16,14 @@
             Return _empId.ToString()
         End Function
     End Class
+
+
+    Public Class ArrayExamples
+        Public Shared Sub DisplayVals(ByVal ParamArray intVals() As Integer)
+            For Each i As Integer In intVals
+                Console.WriteLine($"DisplayVals {i}")
+            Next
+        End Sub ' DisplayVals
+
+    End Class 'ArrayExamples
 End Namespace
