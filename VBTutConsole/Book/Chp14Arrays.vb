@@ -155,3 +155,124 @@ Namespace ReverserAndSort
         End Sub
     End Class
 End Namespace
+
+Namespace Indexers
+    ' a simplified listbox control
+    Public Class ListBoxTest
+        Private strings(255) As String
+        Private ctr As Integer = 0
+
+        ' initialize the list box with strings
+        Public Sub New(ByVal ParamArray initialStrings() As String)
+
+            ' copy the strings passed in to the constructor
+            For Each s As String In initialStrings
+                strings(ctr) = s
+                ctr += 1
+            Next
+        End Sub
+
+        ' add a single string to the end of the list box
+        Public Sub Add(ByVal theString As String)
+            If ctr >= strings.Length Then
+                ' handle bad index
+            Else
+                strings(ctr) = theString
+                ctr += 1
+            End If
+        End Sub
+
+        ' allow array-like access
+        Default Public Property Item(index As Integer) As String
+            Get
+                If index < 0 Or index >= strings.Length Then
+                    ' handle bad index
+                Else
+                    Return strings(index)
+                End If
+            End Get
+            Set(value As String)
+                If index >= ctr Then
+                    ' handle error
+                Else
+                    strings(index) = value
+                End If
+            End Set
+        End Property
+
+
+        ' index on string
+        Default Public Property Item(index As String) As String
+            Get
+                If index.Length = 0 Then
+                    ' handle error
+                Else
+                    Return strings(findString(index))
+                End If
+            End Get
+            Set(value As String)
+                strings(findString(index)) = value
+            End Set
+        End Property
+
+        ' helper method, given a string find
+        ' first matching record that starts with the target
+        Private Function findString(searchString As String) As Integer
+            Dim i As Integer
+            For i = 0 To strings.Length - 1
+                If strings(i).StartsWith(searchString) Then
+                    Return i
+                End If
+            Next
+            Return -1
+        End Function
+
+        ' public how many strings you hold
+        Public Function Count() As Integer
+            Return ctr
+        End Function
+    End Class
+
+    Public Class Tester
+        Public Sub Run()
+            ' create a new list box and initialize it
+            Dim lbt As New ListBoxTest("Hello", "World")
+            Dim i As Integer
+
+            Console.WriteLine("After Creation...")
+            For i = 0 To lbt.Count - 1
+                Console.WriteLine($"lbt({i}): {lbt(i)}")
+            Next
+
+            ' add a few strings
+            lbt.Add("Who")
+            lbt.Add("Is")
+            lbt.Add("John")
+            lbt.Add("Galt")
+
+
+            Console.WriteLine(vbCrLf & "After adding strings..")
+            For i = 0 To lbt.Count - 1
+                Console.WriteLine($"lbt({i}) = {lbt(i)}")
+            Next
+
+            ' test the access
+            Dim subst As String = "Universe"
+
+            lbt(1) = subst
+            lbt("hel") = "Goodbye"
+
+            ' access all the strings
+            Console.WriteLine(vbCrLf & "After editing string...")
+            For i = 0 To lbt.Count - 1
+                Console.WriteLine($"lbt({i}): {lbt(i)}")
+            Next
+
+
+
+        End Sub
+    End Class
+
+
+
+End Namespace
