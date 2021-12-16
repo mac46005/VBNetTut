@@ -25,5 +25,24 @@
             Next
         End Sub ' DisplayVals
 
+        Public Shared Sub Example14_5()
+            Dim a As Integer = 5
+            Dim b As Integer = 6
+            Dim c As Integer = 7
+            Console.WriteLine("Calling with three integers")
+            DisplayVals(a, b, c)
+
+            Console.WriteLine("Calling with four integers")
+            DisplayVals(3, 4, 5, 6)
+
+            Console.WriteLine("Calling with an array of four integers")
+            Dim explicitArray() As Integer = {33, 4, 5, 6}
+            DisplayVals(explicitArray)
+        End Sub
+        Public Sub TwoDimensionalArray()
+            ' How to call a rectangular array system
+            Dim rectangularArray1(,) As Integer
+            Dim rectangularArray2 As Integer(,)
+        End Sub
     End Class 'ArrayExamples
 End Namespace
