@@ -5,7 +5,9 @@ Imports VBTutConsole.Chp14Arrays
 Module Program
     Public Class Tester
         Public Shared Sub Main()
-            Chp14Arrays.ArrayExamples.TwoDimensionalArray()
+            Dim tester As ReverserAndSort.SortReverseDemo
+            tester = New ReverserAndSort.SortReverseDemo()
+            tester.Run()
         End Sub
     End Class
 End Module
