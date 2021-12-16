@@ -1,31 +1,29 @@
 Option Strict Off
 Imports System.Console
+Imports VBTutConsole.My.Structures
+
 Module Program
     Public Class Tester
         Public Shared Sub Main()
-            Dim myIntegerVariable As Integer = 123
-            ' Boxing
-            Dim myObjectVariable As Object = myIntegerVariable
-            Console.WriteLine($"myObjectVariable: {myObjectVariable.ToString()}")
+            ' create an instance of the structure
+            Dim loc1 As New Location(200, 300)
 
-            ' unboxing (must be explicit)
-            ' trying it in an if statement
-            If TypeOf (myObjectVariable) Is Integer Then
-                Dim anotherIntegerVariable As Integer =
-                    DirectCast(myObjectVariable, Integer)
-                Console.WriteLine($"anotherIntegerVariable: {anotherIntegerVariable}")
-            End If
+            ' display the values in the structure
+            Console.WriteLine($"Loc1 location:{loc1}")
 
-            ' unboxing in a try catch for most saftey
-            ' unboxing must be explicit
-            Try
-                Dim anotherIntegerVariable As Integer =
-                    DirectCast(myObjectVariable, Integer)
-                Console.WriteLine($"From try catch{ControlChars.Lf}anotherIntegerVarible: {anotherIntegerVariable}")
-            Catch ex As InvalidCastException
-                ' should not hit this but for demo purposes
-                Console.WriteLine(ex.Message)
-            End Try
+            ' invoke the default constructor
+            Dim loc2 As New Location()
+            Console.WriteLine($"Loc2 location: {loc2}")
+
+            ' pass the constructor to a method
+            myFunc(loc1)
+            Console.WriteLine($"Loc1 location: {loc1}")
+        End Sub
+        Public Shared Sub myFunc(loc As Location)
+            ' modify the values through the properties
+            loc.XVal = 49
+            loc.YVal = 300
+            Console.WriteLine($"{loc} location: {loc}")
         End Sub
     End Class
 End Module
