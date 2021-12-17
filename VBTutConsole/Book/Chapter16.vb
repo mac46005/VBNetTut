@@ -1,4 +1,5 @@
 ﻿Imports System.Text
+Imports System.Text.RegularExpressions
 
 Namespace Chapter16
     Public Class CompareStringDemo
@@ -234,5 +235,20 @@ Namespace Chapter16
             Console.WriteLine(output)
         End Sub
 
+    End Class
+
+    Public Class RegexDemo
+        Public Sub Run()
+            Dim s1 As String = "One,Two,Three Liberty Associates, Inc."
+            Dim theRegex As New Regex(" |, |,")
+            Dim sBuilder As New StringBuilder()
+            Dim id As Integer = 1
+            For Each subString As String In theRegex.Split(s1)
+                id = id + 1
+                sBuilder.AppendFormat($"{id} : {subString}" + Environment.NewLine)
+            Next
+
+            Console.WriteLine(sBuilder)
+        End Sub
     End Class
 End Namespace
