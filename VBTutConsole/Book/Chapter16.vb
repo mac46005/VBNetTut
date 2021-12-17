@@ -31,13 +31,27 @@
             ' use the overloaded operator
             Dim s4 As String = s1 & s2
             Console.WriteLine($"s4 concatenated from s1 & s2: {s4}")
+        End Sub
+    End Class
+
+    Public Class CopyStringDemo
+        Public Sub Run()
+            Dim s2 As String = "abcd"
+            Dim s3 As String = "ABCD"
 
 
+            ' the String copy method
+            Dim s4 As String = String.Copy(s2)
+            Console.WriteLine($"s4 copied from s2: {s4}")
+
+
+            ' use the overloaded operator
+            Dim s5 As String = s4
+            Console.WriteLine($"s5 = s4: {s5}")
 
 
 
 
         End Sub
     End Class
-
 End Namespace
