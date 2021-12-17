@@ -5,8 +5,8 @@ Imports VBTutConsole.Chp14Arrays
 Module Program
     Public Class Tester
         Public Shared Sub Main()
-            Dim tester As Chapter16.ConcatenateDemo
-            tester = New Chapter16.ConcatenateDemo()
+            Dim tester As Chapter16.SplitStringDemo
+            tester = New Chapter16.SplitStringDemo()
 
             tester.Run()
         End Sub
