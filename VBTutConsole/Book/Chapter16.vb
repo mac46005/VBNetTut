@@ -19,4 +19,25 @@
 
         End Sub
     End Class
+
+    Public Class ConcatenateDemo
+        Public Sub Run()
+            Dim s1 As String = "abcd"
+            Dim s2 As String = "ABCD"
+            ' concatenation method
+            Dim s3 As String = String.Concat(s1, s2)
+            Console.WriteLine($"s3 concatenated from s1 and s2: {s3}")
+
+            ' use the overloaded operator
+            Dim s4 As String = s1 & s2
+            Console.WriteLine($"s4 concatenated from s1 & s2: {s4}")
+
+
+
+
+
+
+        End Sub
+    End Class
+
 End Namespace
