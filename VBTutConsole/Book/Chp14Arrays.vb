@@ -267,9 +267,6 @@ Namespace Indexers
             For i = 0 To lbt.Count - 1
                 Console.WriteLine($"lbt({i}): {lbt(i)}")
             Next
-
-
-
         End Sub
     End Class
 

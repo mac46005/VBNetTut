@@ -5,8 +5,8 @@ Imports VBTutConsole.Chp14Arrays
 Module Program
     Public Class Tester
         Public Shared Sub Main()
-            Dim tester As ReverserAndSort.SortReverseDemo
-            tester = New ReverserAndSort.SortReverseDemo()
+            Dim tester As Chapter15.Tester
+            tester = New Chapter15.Tester()
             tester.Run()
         End Sub
     End Class
