@@ -243,4 +243,100 @@
 
     End Class
 
+    Public Class StackTester
+        Public Sub Run()
+            Dim intStack As New Stack()
+
+            ' populate the stack
+            For i = 0 To 7
+                intStack.Push(i * 5)
+            Next
+
+            ' Display the Stack
+            Console.WriteLine("insStack value:")
+            DisplayValues(intStack)
+
+            ' Remove an element from the stack
+            Console.WriteLine($"(Pop){intStack.Pop()}")
+
+            ' Display the stack
+            Console.WriteLine("intStack values:")
+            DisplayValues(intStack)
+
+            ' remove another element from the stack
+            Console.WriteLine($"(Pop){intStack.Pop()}")
+
+
+            ' Display the stack
+            Console.WriteLine("IntStack Values:")
+            DisplayValues(intStack)
+
+            ' View the first element in the
+            ' stack but do not remove
+            Console.WriteLine($"(Peek){intStack.Peek()}")
+
+
+            ' display the stack
+            Console.WriteLine("intStack values:")
+            DisplayValues(intStack)
+
+        End Sub
+        Public Sub DisplayValues(myCollection As IEnumerable)
+            For Each o As Object In myCollection
+                Console.WriteLine(o)
+            Next
+        End Sub
+    End Class
+
+    Public Class CopyCollectionDemo
+        Public Sub Run()
+            Dim intStack As New Stack()
+
+            ' populate the stack
+            Dim i As Integer
+            For i = 0 To 4
+                intStack.Push((i * 5))
+            Next
+
+            ' display the stack.
+            Console.WriteLine("intStack values:")
+            DisplayValues(intStack)
+
+            Const arraySize As Integer = 10
+            Dim testArray(arraySize) As Integer
+
+            ' populate the array
+            For i = 1 To arraySize - 1
+                testArray(i) = 1 * 100
+            Next
+
+            Console.WriteLine("Contents of the test array")
+            DisplayValues(testArray)
+
+
+            ' copy the intStack into the new array, start offset 3
+            intStack.CopyTo(testArray, 3)
+            Console.WriteLine("TestArray after copy: ")
+            DisplayValues(testArray)
+
+
+            ' copy the entire source stack
+            ' to a new standard array
+            Dim myArray As Object() = intStack.ToArray()
+
+            ' display the values of the new standard array
+            Console.WriteLine("The new array:")
+            DisplayValues(myArray)
+
+
+
+        End Sub
+
+        Public Sub DisplayValues(myCollection As IEnumerable)
+            For Each o As Object In myCollection
+                Console.WriteLine(o)
+            Next
+        End Sub
+
+    End Class
 End Namespace
