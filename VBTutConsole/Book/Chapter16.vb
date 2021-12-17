@@ -1,4 +1,6 @@
-﻿Namespace Chapter16
+﻿Imports System.Text
+
+Namespace Chapter16
     Public Class CompareStringDemo
         Public Sub Run()
             ' create some Strings to work with
@@ -200,6 +202,35 @@
                 output &= subString
                 output &= Environment.NewLine
             Next
+            Console.WriteLine(output)
+        End Sub
+
+    End Class
+
+    Public Class StringBuilderDemo
+        Public Sub Run()
+            ' create some strings to work with
+            Dim s1 As String = "One,Two,Three Liberty Associates, Inc."
+
+            ' constants for the space and comma characters
+            Const Space As Char = " "c
+            Const Comma As Char = ","c
+
+            ' array of delimiters to split the sentece with
+            Dim delimiters() As Char = {Space, Comma}
+
+            Dim output As New StringBuilder()
+            Dim ctr As Integer = 0
+
+            ' split the String and then iterate over the 
+            ' result array of Strings
+            Dim resultArray As String() = s1.Split(delimiters)
+
+            For Each subString As String In resultArray
+                ctr = ctr + 1
+                output.AppendFormat($"{ctr} : {subString}" + Environment.NewLine)
+            Next subString
+
             Console.WriteLine(output)
         End Sub
 
